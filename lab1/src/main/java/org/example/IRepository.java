@@ -1,11 +1,14 @@
-package org.example;
+package example;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
-public interface IRepository<T>{
-    void addObj(T object) throws SQLException;
+interface IRepo<T> {
+    int insert(T object) throws SQLException;
     void delete(T object) throws SQLException;
-    void update(T object) throws SQLException;
-    List<T> getAll() throws SQLException;
+    void update(T object, int id) throws SQLException;
+    List<T> getList() throws SQLException;
+
+    Connection connectToDB() throws SQLException;
+    Statement getStatement(Connection conn) throws SQLException;
 }
