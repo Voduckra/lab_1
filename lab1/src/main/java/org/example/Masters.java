@@ -1,22 +1,24 @@
-package org.example;
+package example;
 
 public class Masters {
-    private int id_master;
+    private Boolean isDelete;
+    private Integer id;
     private String name;
     private String surname;
 
-    public Masters(int id_master, String name, String surname) {
-        this.id_master = id_master;
-        this.name = name;
+    public Masters(Integer id, String surname, String name, Boolean isDelete) {
+        this.id = id;
         this.surname = surname;
+        this.name = name;
+        this.isDelete = isDelete;
     }
 
-    public int getId_master() {
-        return id_master;
+    public int getId() {
+        return id;
     }
 
-    public void setId_master(int id_master) {
-        this.id_master = id_master;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -33,5 +35,12 @@ public class Masters {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public boolean isDelete() {
+        return isDelete;
+    }
+    public void setDelete(boolean deleted) {
+        isDelete = deleted;
     }
 }
